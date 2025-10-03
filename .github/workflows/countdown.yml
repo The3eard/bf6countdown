@@ -29,4 +29,9 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add image/countdown.png
           git commit -m "Update countdown image" || echo "No changes to commit"
-          git push
+
+      - name: Push changes
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
