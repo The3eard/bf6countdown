@@ -18,13 +18,15 @@ width, height = 600, 200
 bg_color = (30, 30, 30)
 text_color = (255, 255, 255)
 font_size = 48
-font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" # Change if needed
+font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" # Ubuntu font
 
 # Create image
 image = Image.new("RGB", (width, height), bg_color)
 draw = ImageDraw.Draw(image)
 font = ImageFont.truetype(font_path, font_size)
-text_width, text_height = draw.textsize(countdown_text, font=font)
+# Use getbbox for Pillow ≥10.0 compatibility
+bbox = font.getbbox(countdown_text)
+text_width, text_height = bbox[2] - bbox[0], bbox[3] - bbox[1]
 position = ((width - text_width) // 2, (height - text_height) // 2)
 draw.text(position, countdown_text, fill=text_color, font=font)
 
