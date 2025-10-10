@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 # Time settings
-target = datetime(2015, 10, 10, 17, 0, 0, tzinfo=ZoneInfo("Europe/Madrid"))
+target = datetime(2025, 10, 10, 17, 0, 0, tzinfo=ZoneInfo("Europe/Madrid"))
 now = datetime.now(ZoneInfo("Europe/Madrid"))
 diff = target - now
 days = diff.days
