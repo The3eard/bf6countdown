@@ -2,9 +2,9 @@ from datetime import datetime, timezone
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-# Countdown target: October 10th, 00:00 UTC
-target = datetime(2025, 10, 10, 0, 0, 0, tzinfo=timezone.utc)
-now = datetime.now(timezone.utc)
+# Countdown target: October 10th, 17:00 Madrid
+target = datetime(2015, 10, 10, 17, 0, 0, tzinfo=ZoneInfo("Europe/Madrid"))
+now = datetime.now(ZoneInfo("Europe/Madrid"))
 diff = target - now
 
 days = diff.days
