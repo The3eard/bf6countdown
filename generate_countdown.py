@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from PIL import Image, ImageDraw, ImageFont
 import os
 
